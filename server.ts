@@ -1126,7 +1126,7 @@ app.post('/api/ai', async (req, res) => {
   const geminiKey = process.env.GEMINI_API_KEY;
   const { message, career, level, goal } = req.body;
 
-  if (!geminiKey || geminiKey === 'MY_GEMINI_API_KEY') {
+  if (!geminiKey || geminiKey === AQ.Ab8RN6KKcRvkO3tsGH7WvrVDESSj_glMjn2DEjW_vRiwZc-9eg) {
     return res.status(503).json({
       detail: 'Gemini API key is not configured on the server. Please set GEMINI_API_KEY in your environment.',
     });
@@ -1141,7 +1141,7 @@ ${message}
 Provide a structured, encouraging, practical, and highly actionable response with concrete steps and examples.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${geminiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
