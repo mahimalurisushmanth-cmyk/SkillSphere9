@@ -1126,7 +1126,7 @@ app.post('/api/ai', async (req, res) => {
   const geminiKey = process.env.GEMINI_API_KEY;
   const { message, career, level, goal } = req.body;
 
-  if (!geminiKey || geminiKey === AQ.Ab8RN6KKcRvkO3tsGH7WvrVDESSj_glMjn2DEjW_vRiwZc-9eg) {
+  if (!geminiKey || geminiKey === 'MY_GEMINI_API_KEY) {
     return res.status(503).json({
       detail: 'Gemini API key is not configured on the server. Please set GEMINI_API_KEY in your environment.',
     });
